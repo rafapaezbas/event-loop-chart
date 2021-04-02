@@ -2,6 +2,8 @@
 
 Visualize the [lag of the event loop](https://davidhettler.net/blog/event-loop-lag/) of your Nodejs application. 
 
+![example](https://raw.githubusercontent.com/rafapaezbas/event-loop-chart/master/images/example.png)
+
 ## What is event loop lag?
 
 It is a metric that can help to spot synchronous functions in your Nodejs application. [The event loop](https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/) allows to execute non blocking i/o operations as long as this operations are asynchronous. Please check better explanations of the event loop functionality but in short, there is a queue of operations to be executed, if any of those operations is synchronous like _fs.readFileSync('/file.md')_ the event loop is blocked until the operation is finished. The time that the event loop is blocked is called event loop lag.
