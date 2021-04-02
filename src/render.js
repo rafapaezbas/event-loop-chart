@@ -22,18 +22,7 @@ exports.render = async (data,interval,path) => {
         data: {
             labels: generateLabels(data,interval),
             datasets: generateDatasets(data),
-            /*
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            maxTicksLimit : 8
-                        }
-                    }]
-                }
-            }
-            */
-        }
+        },
     };
     const chartJSNodeCanvas = new ChartJSNodeCanvas({ width, height, chartCallback });
     const url = await chartJSNodeCanvas.renderToDataURL(configuration);

@@ -1,6 +1,7 @@
 const { monitorEventLoopDelay } = require('perf_hooks');
 const h = monitorEventLoopDelay({ resolution: 20 });
 const render = require('./render');
+
 const EventLoopChart = () => { };
 
 var data = [];
@@ -10,14 +11,14 @@ data['p50'] = [];
 data['p95'] = [];
 data['p99'] = [];
 
-h.enable();
 
 EventLoopChart.init = (interval,path) => {
+    h.enable();
     initTimer(interval,path);
 };
 
 EventLoopChart.snapshot = (path) => {
-    render.render(data,path);
+    render.render(data,interval,path);
 };
 
 const initTimer = (interval,path) => {
