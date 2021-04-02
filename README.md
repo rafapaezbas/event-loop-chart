@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/event-loop-chart.svg)](https://badge.fury.io/js/event-loop-chart)
+
 # Event-loop-chart
 
 Visualize the [lag of the event loop](https://davidhettler.net/blog/event-loop-lag/) of your Nodejs application. 
