@@ -1,6 +1,6 @@
 {
   "name": "event-loop-chart",
-  "version": "1.0.0",
+  "version": "0.1",
   "description": "Create charts form event loop lag to measure the performance of your app.",
   "main": "src/index.js",
   "scripts": {
