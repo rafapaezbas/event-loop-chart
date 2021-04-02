@@ -4,6 +4,7 @@ const render = require('./render');
 
 const EventLoopChart = () => { };
 
+var interval;
 var data = [];
 data['p10'] = [];
 data['p25'] = [];
@@ -12,7 +13,9 @@ data['p95'] = [];
 data['p99'] = [];
 
 
-EventLoopChart.init = (interval,path) => {
+
+EventLoopChart.init = (interval_,path) => {
+    interval = interval_;
     h.enable();
     initTimer(interval,path);
 };
