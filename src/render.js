@@ -5,7 +5,7 @@ const width = 800;
 const height = 600;
 
 const labels = ['p10', 'p25', 'p50', 'p95', 'p99'];
-const numOfTicks = 8;
+const maxNumOfTicks = 8;
 
 const colors = [];
 colors['p10'] = 'rgba(92,194,204,1)';
@@ -16,7 +16,6 @@ colors['p99'] = 'rgba(204, 92, 154, 1)';
 
 
 exports.render = async (data,interval,path) => {
-    console.log("rendering...");
     const configuration = {
         type: 'line',
         data: {
@@ -50,8 +49,9 @@ const generateLabels = (data,interval) => {
     var samples = data["p10"].length; // Any p would do
     var time = interval * samples;
     var labels = [];
-    for(var i = 0; i < numOfTicks && i < samples; i++){
-        labels.push((time / numOfTicks) * i);
+    for(var i = 0; i < maxNumOfTicks && i < samples; i++){
+        var ticks = samples > maxNumOfTicks ? maxNumOfTicks : samples;
+        labels.push((time / ticks) * i);
     }
     return labels;
 };
